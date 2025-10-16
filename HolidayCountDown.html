@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday CountDown</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-weight: normal;
+        }
+
+        li {
+            display: inline-block;
+            font-size: 1.5em;
+            list-style-type: none;
+            padding: 1em;
+            text-transform: uppercase;
+        }
+
+        li span {
+            display: block;
+            font-size: 4.5rem;
+        }
+
+        /* general styling */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background:url('https://img4.thuthuatphanmem.vn/uploads/2021/02/07/anh-ban-phao-bong-tuyet-dep_095940511.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            font-family: -apple-system, 
+                BlinkMacSystemFont, 
+                "Segoe UI", 
+                Roboto, 
+                Oxygen-Sans, 
+                Ubuntu, 
+                Cantarell, 
+                "Helvetica Neue", 
+                sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Countdown to Tet Nguyen Dan Hodiday:</h1>
+            <ul>
+                <li><span id="days"></span>days</li>
+                <li><span id="hours"></span>Hours</li>
+                <li><span id="minutes"></span>Minutes</li>
+                <li><span id="seconds"></span>Seconds</li>
+            </ul>
+        </div>
+       
+        <div>
+            <h1>Countdown to Tet Duong Lich Hodiday:</h1>
+            <ul>
+                <li><span id="western_days"></span>days</li>
+                <li><span id="western_hours"></span>Hours</li>
+                <li><span id="western_minutes"></span>Minutes</li>
+                <li><span id="western_seconds"></span>Seconds</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+var countDownNguyenDanHoliday = new Date('Jan 25, 2026 00:00:00').getTime(),
+    x = setInterval(function() {
+
+      var now = new Date().getTime(),
+          distance = countDownNguyenDanHoliday - now;
+
+    document.getElementById('days').innerText = Math.floor(distance / (day)),
+    document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+    document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+    document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+      
+      //do something later when date is reached
+      //if (distance < 0) {
+      //  clearInterval(x);
+      //}
+
+    }, second)
+var countDownTetDuongLichHoliday = new Date('Jan 01, 2026 00:00:00').getTime(),
+    x = setInterval(function() {
+
+      var now = new Date().getTime(),
+          distance = countDownTetDuongLichHoliday - now;
+
+    document.getElementById('western_days').innerText = Math.floor(distance / (day)),
+    document.getElementById('western_hours').innerText = Math.floor((distance % (day)) / (hour)),
+    document.getElementById('western_minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+    document.getElementById('western_seconds').innerText = Math.floor((distance % (minute)) / second);
+      
+      //do something later when date is reached
+      //if (distance < 0) {
+      //  clearInterval(x);
+      //}
+
+    }, second)
+</script>
+</html>
