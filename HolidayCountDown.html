@@ -170,7 +170,7 @@
         }, second);
 
         // Hiển thị countdown cho Tết Dương Lịch
-        const countDownTetDuongLichHoliday = new Date('Jan 01, 2027 00:00:00').getTime();
+        const countDownTetDuongLichHoliday = new Date(2027, 0, 1, 0, 0, 0).getTime();
         setInterval(() => {
             const now = new Date().getTime(),
                 distance = countDownTetDuongLichHoliday - now;
